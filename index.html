@@ -108,45 +108,48 @@
                 background-position: 100% 50%;
             }
         }
-                #stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Prevent interaction with stars */
-        }
-        #stars::before, #stars::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 1px;
-            height: 1px;
-            background-color: #fff;
-            opacity: 0; /* Initially invisible */
-            animation: twinkling 5s infinite; /* Twinkling animation */
-        }
-        #stars::before {
-            animation-delay: 0s;
-        }
-        #stars::after {
-            animation-delay: 2s;
-        }
-        @keyframes twinkling {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-            50% {
-                transform: translateY(-200px) rotate(180deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-400px) rotate(360deg);
-                opacity: 0;
-            }
-        }
+#stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interaction with stars */
+    z-index: -1; /* Place stars behind other content */
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.8) 1%, transparent 1%);
+    background-size: 2px 2px; /* Size of stars */
+}
+
+#stars::before,
+#stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially invisible */
+    animation: twinkling 5s infinite; /* Twinkling animation */
+}
+
+#stars::after {
+    animation-delay: 2s; /* Delay animation for variation */
+}
+
+@keyframes twinkling {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-200px) rotate(180deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-400px) rotate(360deg);
+        opacity: 0;
+    }
+}
     </style>
 </head>
 <body>
