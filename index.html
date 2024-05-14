@@ -151,6 +151,44 @@
         opacity: 0;
     }
 }
+        /* New mint NFT styles */
+        #mintNFT {
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            max-width: 600px; /* Adjust width as needed */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            border: 2px solid #000; /* Black-themed border */
+        }
+        #mintNFT img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: brightness(0.8); /* Darken image for black theme */
+        }
+        #mintOverlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ff00, #00ffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitter 4s linear infinite;
+        }
+        @keyframes glitter {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }        
     </style>
 </head>
 <body>
@@ -183,6 +221,13 @@
         <div class="menuItem">
             <img src="image5.jpeg" alt="Image 5">
             <div class="label">ABOUT</div>
+        </div>
+    </div>
+        <div id="mintNFT">
+        <div id="mintOverlay">
+            <h2 style="font-size: 36px; margin-top: 30px;">Mint Your ASC NFT</h2>
+            <!-- Add your NFT image here -->
+            <img src="your-nft-image.jpg" alt="Mint NFT Image" style="margin-top: 20px;">
         </div>
     </div>
     <script>
