@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASC</title>
+    <title>Astronaut Corgi Coin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@
             padding: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -25,6 +26,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: glitter 4s linear infinite;
+            margin-top: 50px;
         }
         @keyframes glitter {
             0% {
@@ -41,16 +43,77 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
             margin-top: 30px;
         }
+        #menuContainer {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 50px;
+        }
+        .menuItem {
+            position: relative;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .menuItem:hover {
+            transform: translateY(-5px);
+        }
+        .menuItem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 16px;
+            padding: 5px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .menuItem:hover .label {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <div>
         <h1 id="glitterText">Astronaut Corgi Coin</h1>
-        <img id="mainImage" src="asc.png" alt="Main Image">
+        <img id="mainImage" src="asc.png" alt="Astronaut Corgi Coin Image">
+    </div>
+
+    <div id="menuContainer">
+        <div class="menuItem">
+            <img src="image1.jpeg" alt="Image 1">
+            <div class="label">Label 1</div>
+        </div>
+        <div class="menuItem">
+            <img src="image2.jpeg" alt="Image 2">
+            <div class="label">Label 2</div>
+        </div>
+        <div class="menuItem">
+            <img src="image3.jpeg" alt="Image 3">
+            <div class="label">Label 3</div>
+        </div>
+        <div class="menuItem">
+            <img src="image4.jpeg" alt="Image 4">
+            <div class="label">Label 4</div>
+        </div>
+        <div class="menuItem">
+            <img src="image5.jpeg" alt="Image 5">
+            <div class="label">Label 5</div>
+        </div>
     </div>
 
     <script>
         // JavaScript code can be added here if needed
     </script>
 </body>
-</html> 
+</html>
