@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astronaut Corgi Coin</title>
+    <title>ASC</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,35 +11,11 @@
             color: #fff;
             margin: 0;
             padding: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-        }
-        #header {
-            width: 100%;
-            background-color: #111;
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        #menu {
-            display: flex;
-            justify-content: center;
-        }
-        .menuItem {
-            padding: 10px 20px;
-            margin: 0 10px;
-            font-size: 18px;
-            cursor: pointer;
-            color: #fff;
-            transition: color 0.3s ease;
-        }
-        .menuItem:hover {
-            color: #ff00ff; /* Hover color change */
         }
         #glitterText {
             font-size: 48px;
@@ -48,8 +24,7 @@
             background-size: 200% 200%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: glitter 4s linear infinite alternate;
-            margin-top: 100px; /* Adjust spacing from menu */
+            animation: glitter 4s linear infinite;
         }
         @keyframes glitter {
             0% {
@@ -69,11 +44,13 @@
     </style>
 </head>
 <body>
-    <h1 id="glitterText">Astronaut Corgi Coin</h1>
-    <img id="mainImage" src="asc.png" alt="Astronaut Corgi Coin Image">
+    <div>
+        <h1 id="glitterText">Astronaut Corgi Coin</h1>
+        <img id="mainImage" src="asc.png" alt="Main Image">
+    </div>
 
     <script>
         // JavaScript code can be added here if needed
     </script>
 </body>
-</html>
+</html> 
