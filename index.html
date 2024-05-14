@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glittering Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #glitterText {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ff00, #00ffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitter 4s linear infinite;
+        }
+        @keyframes glitter {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        #mainImage {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="glitterText">Your Glittering Name</h1>
+        <img id="mainImage" src="asc.png" alt="Main Image">
+    </div>
+
+    <script>
+        // JavaScript code can be added here if needed
+    </script>
+</body>
+</html>
