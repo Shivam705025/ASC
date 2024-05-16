@@ -147,7 +147,21 @@
             100% {
                 background-position: 100% 50%;
             }
-        }        
+        } 
+        #iframeContainer {
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -190,6 +204,10 @@
     </div>
         <br><br> 
          <button id="buyNowBtn">AIRDROP</button>
+    <br><br>
+    <div id="iframeContainer">
+        <iframe src="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R" title="Embedded Content"></iframe>
+    </div>
     <script>
         // JavaScript code can be added here if needed
     </script>
