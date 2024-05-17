@@ -3,147 +3,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dark Themed Notepad</title>
+    <title>Cosmic Cat Coin</title>
+    <link rel="icon" href="title.png" type="image/x-icon">
     <style>
         body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
             margin: 0;
             padding: 0;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            box-sizing: border-box;
+            text-align: center;
         }
-        .notepad-container {
+        #glitterText {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ff00, #00ffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitter 4s linear infinite;
+            margin-top: 50px;
+        }
+        @keyframes glitter {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        #mainImage {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            margin-top: 50px; /* Increased margin */
+        }
+        #menuContainer {
+            display: flex;
+            justify-content: space-around;
             width: 80%;
-            max-width: 800px;
-            background-color: #252525;
-            padding: 20px;
-            border-radius: 20px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin-top: 50px;
+        }
+        .menuItem {
             position: relative;
             overflow: hidden;
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            border: 2px solid #000; /* Black-themed border */
+            transition: transform 0.3s ease;
         }
-        .notepad-container::before {
-            content: '';
+        .menuItem:hover {
+            transform: translateY(-5px);
+        }
+        .menuItem img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px; /* Adjust border radius */
+            filter: brightness(0.8); /* Darken image for black theme */
+        }
+        .label {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 16px;
+            padding: 5px 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .menuItem:hover .label {
+            opacity: 1;
+        }
+                #buyNowBtn {
+            font-size: 24px;
+            padding: 15px 30px;
+            margin-top: 30px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ff00, #00ffff);
+            background-size: 200% 200%;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            transition: background-position 0.3s ease;
+            animation: glitterButton 4s linear infinite;
+        }
+        #buyNowBtn:hover {
+            background-position: 100% 50%;
+        }
+        @keyframes glitterButton {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+        /* New mint NFT styles */
+        #mintNFT {
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+            width: 80%;
+            height: 100%;
+            max-width: 600px; /* Adjust width as needed */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            border: 2px solid #000; /* Black-themed border */
+        }
+        #mintNFT img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            filter: brightness(0.8); /* Darken image for black theme */
+        }
+        #mintOverlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle, #454545 20%, transparent 60%);
-            opacity: 0.2;
-            pointer-events: none;
+            background: linear-gradient(45deg, #ff0000, #ff00ff, #00ff00, #00ffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitter 4s linear infinite;
         }
-        .notepad-container h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2.5em;
-            color: #ffffff;
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-        }
-        .text-display {
-            background-color: #1e1e1e;
-            color: #ffffff;
-            padding: 15px;
+        @keyframes glitter {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        } 
+        #iframeContainer {
+            width: 80%;
+            max-width: 800px;
+            height: 500px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            font-size: 1.2em;
-            line-height: 1.6;
-            overflow-y: auto;
-            max-height: 400px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            border: 2px solid #fff;
         }
-        .text-display p {
-            margin: 0 0 15px;
-            opacity: 0;
-            animation: appear 0.5s ease forwards;
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+
+        .social-buttons {
+            margin-bottom: 30px;
         }
-        .glow {
-            animation: glowing 2s infinite alternate;
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            text-decoration: none;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease, border-color 0.3s ease;
         }
-        @keyframes glowing {
-            from {
-                text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff;
-            }
-            to {
-                text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff, 0 0 50px #00ffff, 0 0 60px #00ffff, 0 0 70px #00ffff, 0 0 80px #00ffff;
-            }
+
+        .btn i {
+            margin-right: 10px;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .btn:hover::before {
+            top: -25%;
+            left: -25%;
+            width: 150%;
+            height: 150%;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .btn:hover {
+            color: #000000;
+            border-color: #000000;
+        }
+
+        .telegram {
+            background-color: #0088cc;
+        }
+
+        .twitter {
+            background-color: #1da1f2;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .image-gallery img {
+            width: 400px;
+            height: auto;
+            border: 3px solid #ffffff;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <div class="notepad-container">
-        <h1>Dark Themed Notepad</h1>
-        <div class="text-display">
-            <p class="glow">"</p>
-            <p class="glow">L</p>
-            <p class="glow">o</p>
-            <p class="glow">r</p>
-            <p class="glow">e</p>
-            <p class="glow">m</p>
-            <p class="glow"> </p>
-            <p class="glow">i</p>
-            <p class="glow">p</p>
-            <p class="glow">s</p>
-            <p class="glow">u</p>
-            <p class="glow">m</p>
-            <p class="glow"> </p>
-            <p class="glow">d</p>
-            <p class="glow">o</p>
-            <p class="glow">l</p>
-            <p class="glow">o</p>
-            <p class="glow">r</p>
-            <p class="glow"> </p>
-            <p class="glow">s</p>
-            <p class="glow">i</p>
-            <p class="glow">t</p>
-            <p class="glow"> </p>
-            <p class="glow">a</p>
-            <p class="glow">m</p>
-            <p class="glow">e</p>
-            <p class="glow">t</p>
-            <p class="glow">,</p>
-            <p class="glow"> </p>
-            <p class="glow">c</p>
-            <p class="glow">o</p>
-            <p class="glow">n</p>
-            <p class="glow">s</p>
-            <p class="glow">e</p>
-            <p class="glow">c</p>
-            <p class="glow">t</p>
-            <p class="glow">e</p>
-            <p class="glow">t</p>
-            <p class="glow">u</p>
-            <p class="glow">r</p>
-            <p class="glow"> </p>
-            <p class="glow">a</p>
-            <p class="glow">d</p>
-            <p class="glow">i</p>
-            <p class="glow">p</p>
-            <p class="glow">i</p>
-            <p class="glow">s</p>
-            <p class="glow">c</p>
-            <p class="glow">i</p>
-            <p class="glow">n</p>
-            <p class="glow">g</p>
-            <p class="glow"> </p>
-            <p class="glow">e</p>
-            <p class="glow">l</p>
-            <p class="glow">i</p>
-            <p class="glow">t</p>
-            <p class="glow">.</p>
-            <p class="glow"> "</p>
-        </div
+    <div>
+        <h1 id="glitterText">Cosmic Cat Coin</h1>
+        <img id="mainImage" src="asc.png" alt="Astronaut Corgi Coin Image">
+    </div>
+    <br>
+  <button id="buyNowBtn">BUY NOW</button>
+      <br><br><br><br>
+    <div id="menuContainer">
+        <div class="menuItem">
+            <img src="image1.jpeg" alt="Image 1">
+            <div class="label">HOME</div>
+        </div>
+        <div class="menuItem">
+            <img src="image2.jpeg" alt="Image 2">
+            <div class="label">ROADMAP</div>
+        </div>
+        <div class="menuItem">
+            <img src="image3.jpeg" alt="Image 3">
+            <div class="label">TOKENOMICS</div>
+        </div>
+        <div class="menuItem">
+            <img src="image4.jpeg" alt="Image 4">
+            <div class="label">SOCIALS</div>
+        </div>
+        <div class="menuItem">
+            <img src="image5.jpeg" alt="Image 5">
+            <div class="label">ABOUT</div>
+        </div>
+    </div>
+<br><br><br>
+    <div id="mintNFT">
+        <div id="mintOverlay">
+            <h2 style="font-size: 36px; margin-top: 30px;">Get Eligible For Airdrop</h2>
+        </div>
+        <br><br><br>
+        <img src="title.png" alt="Mint NFT Image">
+    </div>
+        <br><br> 
+         <button id="buyNowBtn">AIRDROP</button>
+    <br><br>
+    <div id="iframeContainer">
+        <iframe src="https://raydium.io/swap/?inputMint=sol&outputMint=4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R" title="Embedded Content"></iframe>
+    </div>
+    <br><br><br><br><br><br>
+            <main>
+            <div class="social-buttons">
+                <a href="https://telegram.org" target="_blank" class="btn telegram">
+                    <i class="fab fa-telegram-plane"></i> Join Telegram
+                </a>
+                <a href="https://twitter.com" target="_blank" class="btn twitter">
+                    <i class="fab fa-twitter"></i> Follow on Twitter
+                </a>
+            </div>
+            <div class="image-gallery">
+                <img src="social1.jpeg" alt="Sample Image 1">
+                <img src="social2.jpeg" alt="Sample Image 2">
+            </div>
+        </main>
+    <br><br><br><br>
+    <h1 id="glitterText">About Me</h1>
+    <script>
+        // JavaScript code can be added here if needed
+    </script>
+</body>
+</html>
