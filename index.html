@@ -286,6 +286,12 @@
                 box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             }
         }
+                .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
 <body>
@@ -353,8 +359,11 @@
     <div class="notepad">
         <pre id="text"></pre>
     </div>
-    <br><br>
     <h1 id="glitterText">Tokenomics</h1>
+    <br><br>
+                <div class="image-container">
+                <img src="pie.png" alt="Cosmic Cat Coin">
+            </div>
     <script>
         const textElement = document.getElementById('text');
         const text = `Unveiling the Visionary Behind the Cosmic Cat Coin:
